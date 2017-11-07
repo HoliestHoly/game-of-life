@@ -17,11 +17,7 @@ public class TwoDArray : MonoBehaviour
 	int GetNeighbors(int cellx, int celly)
 	{
 		 neighbors = 0;
-		/*int[,] positions = new int[4,2] {
-			{ -1, -1 }, { 0, -1 }, { 1, -1 },
-			{ -1, 0 }, { 1, 0 },
-			{ -1, 1 }, { 0, 1 }, { 1, 1 }
-		}; */
+	
 			
 		for (int x = -1; x < 2; x++) {
 			for (int y = -1; y < 2; y++) {
@@ -42,15 +38,7 @@ public class TwoDArray : MonoBehaviour
 		}
 	
 
-		/*for (int i = 0; i < positions.Length; i++) {
-			var x = cellx + positions [i, 0];
-			var y = celly + positions [i, 1];
 
-			if (x > 0 && x < Columns && y > 0 && y < Rows) {
-				if (grid [x, y].GetComponent<AliveOrNot> ().Alive) */
-					
-			//}
-		//}
 
 		return neighbors;
 
@@ -150,47 +138,6 @@ public class TwoDArray : MonoBehaviour
 	}
 
 
-	/*void Rules () { //dit werkt niet, en als het zou werken zouden alle cells veranderen
-		var cell = grid [x, y];
-		var aliveOrNot = cell.GetComponent<AliveOrNot> ();
-		var rend = cell.GetComponent<Renderer> ();
-
-		if (neighbors <= 1 || neighbors >= 4) 
-		{
-			
-			aliveOrNot.Alive = false;
-			rend.material.color = new Color (1, 1, 1);
-		}
-
-		else if(neighbors == 3)
-		{
-			aliveOrNot.Alive = true;
-			rend.material.color = new Color (1, 0, 1);
-		}
-	}
-	*/
-
-
-	/*void Step(){  //dit werkt niet 
-		var cell = grid [x, y];
-		List<int[]> actions = new List<int[]>();
-
-		for (int k = 0; k < Columns; k++) {
-			for (int l = 0; l < Rows; l++) {
-				int neighbors = GetNeighbors (x, y);
-				cell currentCell = grid [x, y];
-				if (!currentCell && neighbors == 3)
-					actions.Add (new int[] { x, y, 1 });
-				else if (currentCell.Alive && neighbors <= 1 || currentCell.Alive && neighbors >= 4)
-					actions.Add (new int[] { x, y, 0 });
-			}
-		}
-		foreach (var action in actions) 
-		{
-			grid[action[0],action[1].Alive = action[2] == 1 ? true : false
-		}
-	}
-			*/
 
 
 }
